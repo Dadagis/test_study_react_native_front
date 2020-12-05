@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+}
+
+.pokemons-list {
+  width: 80vw;
+  margin: auto;
+}
+
+.grid {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

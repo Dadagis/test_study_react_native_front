@@ -1,5 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../style/card.css";
 
 export default function Card(props) {
   const { name, url } = props;
@@ -44,13 +45,13 @@ export default function Card(props) {
   //   };
 
   return (
-    <div className="pokemon-card" key={name}>
+    <div className={`pokemon-card ${pokeTypes[0]}`} key={name}>
       {console.log(name, pokeTypes)}
-      <p>{name}</p>
+      <p className="name">{name}</p>
       {pokeTypes.map((type) => {
-        return <p>{type}</p>;
+        return <p className={`type ${pokeTypes[0]}`}>{type}</p>;
       })}
-      <img src={image} alt={name} />
+      <img className="image" src={image} alt={name} />
     </div>
   );
 }

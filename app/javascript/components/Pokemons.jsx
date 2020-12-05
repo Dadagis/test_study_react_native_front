@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
+import PageSelector from "./PageSelector";
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -26,9 +27,44 @@ export default function Pokemons() {
     return <Card key={pokemon.name} name={pokemon.name} url={pokemon.url} />;
   });
 
+  const handleClick = async (e) => {
+    e.preventDefault();
+    setPokemons([]);
+    setLoaded(false);
+
+    if (e.target.innerHTML === "Next") {
+      await axios.get(nextUrl).then((r) => {
+        setPokemons(r.data.results);
+        setNextUrl(r.data.next);
+        setPreviousUrl(r.data.previous);
+        setLoaded(true);
+      });
+    } else {
+      await axios.get(previousUrl).then((r) => {
+        setPokemons(r.data.results);
+        setNextUrl(r.data.next);
+        setPreviousUrl(r.data.previous);
+        setLoaded(true);
+      });
+    }
+  };
+
   return (
     <div className="pokemons-list">
-      <div className="grid">{loaded && displayPokemons}</div>
+      <div className="grid">
+        <h1 className="title">Pokedex</h1>
+        <PageSelector
+          nextUrl={nextUrl}
+          previousUrl={previousUrl}
+          handleClick={handleClick}
+        />
+        {loaded && displayPokemons}
+      </div>
+      <PageSelector
+        nextUrl={nextUrl}
+        previousUrl={previousUrl}
+        handleClick={handleClick}
+      />
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function Pokemons() {
   }, []);
 
   const displayPokemons = pokemons.map((pokemon) => {
-    return <Card name={pokemon.name} url={pokemon.url} />;
+    return <Card key={pokemon.name} name={pokemon.name} url={pokemon.url} />;
   });
 
   return (

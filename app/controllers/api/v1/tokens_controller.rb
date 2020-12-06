@@ -4,7 +4,7 @@ class Api::V1::TokensController < ApplicationController
         if user&.authenticate(params[:password])
             token = encode_token({id:user.id, email: user.email})
           render json: {
-            jwt: encode_token({id:user.id, email: user.email})
+            jwt: encode_token({id:user.id, email: user.email, fav_pokemons: user.favorite_pokemons})
         }
         else
           render json: {errors: "Invalid email or password"}, status: :unprocessable_entity

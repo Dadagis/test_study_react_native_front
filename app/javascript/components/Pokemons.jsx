@@ -3,12 +3,14 @@ import axios from "axios";
 import Card from "./Card";
 import PageSelector from "./PageSelector";
 import MainHeader from "./MainHeader";
+import isAuthenticated from "../services/authService";
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
   const [nextUrl, setNextUrl] = useState("");
   const [previousUrl, setPreviousUrl] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const [user, setUser] = useState(false);
 
   useEffect(() => {
     try {
@@ -21,6 +23,10 @@ export default function Pokemons() {
     } catch (error) {
       console.log(error);
     }
+  }, []);
+
+  useEffect(() => {
+    setUser(isAuthenticated());
   }, []);
 
   const displayPokemons = pokemons.map((pokemon) => {
@@ -52,7 +58,7 @@ export default function Pokemons() {
   return (
     <div className="pokemons-list">
       <div className="grid">
-        <MainHeader />
+        <MainHeader user={user} />
         <PageSelector
           nextUrl={nextUrl}
           previousUrl={previousUrl}

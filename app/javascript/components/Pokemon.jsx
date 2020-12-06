@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 
 import "../style/details.css";
 import ProgressBar from "./ProgressBar";
@@ -57,13 +58,18 @@ export default function Pokemon(props) {
       const male = 100 - female;
       return (
         <span className="about-value">
-          <i id="male" class="fas fa-mars"></i>
-          {` ${male} %`} - <i id="female" class="fas fa-venus"></i>
+          <i id="male" className="fas fa-mars"></i>
+          {` ${male} %`} - <i id="female" className="fas fa-venus"></i>
           {` ${female} %`}
         </span>
       );
     } else {
     }
+  };
+
+  const handleClick = () => {
+    console.log("handle click");
+    props.history.push("/");
   };
 
   return (
@@ -73,6 +79,10 @@ export default function Pokemon(props) {
           props.location.search.slice(7).split(",")[0]
         }`}
       >
+        <div className="pokemon-header">
+          <i className="fas fa-arrow-left" onClick={handleClick}></i>
+          <i className="far fa-heart"></i>
+        </div>
         <h1 className="name-big">{name}</h1>
         <div className="types-div">
           {props.location.search

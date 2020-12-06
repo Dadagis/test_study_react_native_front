@@ -21,7 +21,7 @@
 
 .type {
   border-radius: 50px;
-  filter: brightness(1.05);
+  filter: brightness(1.085);
   max-width: fit-content;
   padding: 0.25rem;
   margin-bottom: 0.5rem;

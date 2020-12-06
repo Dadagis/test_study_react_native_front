@@ -16,7 +16,7 @@
 
 .title {
   grid-column: span 4 / span 1;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 
 .page-selector {

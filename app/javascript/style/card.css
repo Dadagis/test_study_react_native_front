@@ -31,10 +31,28 @@
   /* background-color: #abedc6; */
 }
 
+.id {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  filter: opacity(0.25);
+}
+
 .image {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  transform: scale(1.05);
 }
 
 .grass {

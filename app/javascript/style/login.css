@@ -45,11 +45,11 @@
   margin-top: 2rem;
 }
 
-.link {
+.login-link {
   text-decoration: none;
   color: #4299e1;
 }
 
-.link:hover {
+.login-link:hover {
   color: #2b6cb0;
 }

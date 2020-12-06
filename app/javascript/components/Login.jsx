@@ -16,10 +16,9 @@ export default function Login(props) {
       await axios
         .post("/api/v1/tokens/", { email: email, password: password })
         .then((response) => {
-          console.log(response);
-          //   localStorage.setItem("whatsAppToken", response.data);
+          localStorage.setItem("pokedexToken", response.data.jwt);
         });
-      //   props.history.push("/");
+      props.history.push("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -61,7 +60,7 @@ export default function Login(props) {
           </div>
         </form>
         <div className="link-div">
-          <Link to="/signup" className="link">
+          <Link to="/signup" className="login-link">
             Je n'ai pas de compte
           </Link>
         </div>

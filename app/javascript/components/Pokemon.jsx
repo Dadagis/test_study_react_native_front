@@ -77,6 +77,14 @@ export default function Pokemon(props) {
         </div>
         <img src={image} alt={name} className="large-image" />
       </div>
+      <div className="pokemon-stats">
+        <span className="stat-title">Height</span>
+        <span className="stat-value">{`${height / 10} m`}</span>
+        <span className="stat-title">Weight</span>
+        <span className="stat-value">{`${weight / 10} kg`}</span>
+        <span className="stat-title">Genre</span>
+        <span className="stat-value">{genera}</span>
+      </div>
     </div>
   );
 }

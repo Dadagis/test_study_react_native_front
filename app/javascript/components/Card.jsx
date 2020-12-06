@@ -13,7 +13,7 @@ export default function Card(props) {
     let value = [];
     axios.get(url).then((r) => {
       //   console.log(r.data);
-      setImage(r.data.sprites.front_default);
+      setImage(r.data.sprites.other.dream_world.front_default);
       setPokeId(r.data.id);
       for (const key in r.data.types) {
         value.push(r.data.types[key].type.name);
@@ -28,7 +28,7 @@ export default function Card(props) {
   };
 
   return (
-    <Link to={`/pokemons/${pokeId}`} className="link">
+    <Link to={`/pokemons/${pokeId}?types=${pokeTypes}`} className="link">
       <div className={`pokemon-card ${pokeTypes[0]}`} key={name}>
         {/* {console.log(name, pokeTypes)} */}
         <p className="name">{name}</p>

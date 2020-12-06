@@ -29,3 +29,28 @@
   padding: 0.5rem;
   margin: 0.5rem;
 }
+
+.grass {
+  background-color: #83eba6;
+  /* background-color: #0e9c94; */
+}
+
+.fire {
+  background-color: #ee7067;
+}
+
+.water {
+  background-color: #79acee;
+}
+
+.bug {
+  background-color: #9dd885;
+}
+
+.flying {
+  background-color: #9dbfec;
+}
+
+.normal {
+  background-color: #cfd7e2;
+}

@@ -41,8 +41,10 @@
 
 .image {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 0.5rem;
+  right: 1rem;
+  height: 4.5rem;
+  width: 4.5rem;
 }
 
 .link {
@@ -53,29 +55,4 @@
 
 .link:hover {
   transform: scale(1.05);
-}
-
-.grass {
-  background-color: #83eba6;
-  /* background-color: #0e9c94; */
-}
-
-.fire {
-  background-color: #ee7067;
-}
-
-.water {
-  background-color: #79acee;
-}
-
-.bug {
-  background-color: #9dd885;
-}
-
-.flying {
-  background-color: #9dbfec;
-}
-
-.normal {
-  background-color: #cfd7e2;
 }

@@ -6,7 +6,6 @@ import "../style/details.css";
 import ProgressBar from "./ProgressBar";
 
 export default function Pokemon(props) {
-  console.log(props);
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [name, setName] = useState("");
@@ -26,7 +25,6 @@ export default function Pokemon(props) {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`)
       .then((r) => {
-        console.log(r.data);
         setHeight(r.data.height);
         setWeight(r.data.weight);
         setName(r.data.name);
@@ -68,7 +66,6 @@ export default function Pokemon(props) {
   };
 
   const handleClick = () => {
-    console.log("handle click");
     props.history.push("/");
   };
 
@@ -90,12 +87,7 @@ export default function Pokemon(props) {
             .split(",")
             .map((type) => {
               return (
-                <p
-                  key={type}
-                  className={`type ${
-                    props.location.search.slice(7).split(",")[0]
-                  }`}
-                >
+                <p key={type} className={`type ${type}`}>
                   {type}
                 </p>
               );

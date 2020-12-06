@@ -15,22 +15,51 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .title {
   grid-column: span 4 / span 1;
+  margin-top: 4rem;
+  margin-left: 0.5rem;
+  color: rgb(46, 46, 46);
+  font-size: 3rem;
   /* margin-left: 5rem; */
+}
+
+.main-header {
+  grid-column: span 4 / span 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header > .login-link {
+  margin-top: 2rem;
+  margin-right: 0.5rem;
+  color: #7b62a3;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
 }
 
 .page-selector {
   max-width: fit-content;
-  margin: 3rem auto 3rem;
+  margin: 2rem auto 2rem;
   grid-column: span 4 / span 1;
 }
 
 .page-selector > button {
   padding: 0.5rem;
   margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(173, 146, 236);
+  color: white;
+  font-weight: bold;
+  border-color: rgb(153, 117, 236);
+  outline: none;
 }
 
 .grass {
@@ -43,17 +72,77 @@
 }
 
 .water {
-  background-color: #79acee;
+  background-color: #4592c4;
 }
 
 .bug {
-  background-color: #9dd885;
+  background-color: #729f3f;
 }
 
 .flying {
-  background-color: #9dbfec;
+  background: linear-gradient(180deg, #3dc7ef, #bdb9b8);
+}
+
+.type.flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
 }
 
 .normal {
-  background-color: #cfd7e2;
+  background-color: #a4acaf;
+}
+
+.poison {
+  background-color: #b97fc9;
+}
+
+.electric {
+  background-color: #eed535;
+}
+
+.ground {
+  background: linear-gradient(180deg, #f7de3f, #ab9842);
+}
+
+.type.ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+}
+
+.fairy {
+  background-color: #fdb9e9;
+}
+
+.fighting {
+  background-color: #d56723;
+}
+
+.psychic {
+  background-color: #f366b9;
+}
+
+.rock {
+  background-color: #a38c21;
+}
+
+.ghost {
+  background-color: #7b62a3;
+}
+
+.ice {
+  background-color: #7b62a3;
+}
+
+.dragon {
+  background: linear-gradient(180deg, #53a4cf, #f16e57);
+}
+
+.type.dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+
+.dark {
+  background-color: #707070;
+}
+
+.steel {
+  background-color: #9eb7b8;
 }

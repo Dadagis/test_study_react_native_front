@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 import PageSelector from "./PageSelector";
+import MainHeader from "./MainHeader";
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -12,7 +13,6 @@ export default function Pokemons() {
   useEffect(() => {
     try {
       axios.get("https://pokeapi.co/api/v2/pokemon").then((response) => {
-        console.log("response", response);
         setPokemons(response.data.results);
         setNextUrl(response.data.next);
         setPreviousUrl(response.data.previous);
@@ -52,19 +52,19 @@ export default function Pokemons() {
   return (
     <div className="pokemons-list">
       <div className="grid">
-        <h1 className="title">Pokedex</h1>
+        <MainHeader />
         <PageSelector
           nextUrl={nextUrl}
           previousUrl={previousUrl}
           handleClick={handleClick}
         />
         {loaded && displayPokemons}
+        <PageSelector
+          nextUrl={nextUrl}
+          previousUrl={previousUrl}
+          handleClick={handleClick}
+        />
       </div>
-      <PageSelector
-        nextUrl={nextUrl}
-        previousUrl={previousUrl}
-        handleClick={handleClick}
-      />
     </div>
   );
 }

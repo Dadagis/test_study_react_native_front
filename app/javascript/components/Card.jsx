@@ -12,7 +12,6 @@ export default function Card(props) {
   useEffect(() => {
     let value = [];
     axios.get(url).then((r) => {
-      //   console.log(r.data);
       setImage(r.data.sprites.other.dream_world.front_default);
       setPokeId(r.data.id);
       for (const key in r.data.types) {
@@ -30,7 +29,6 @@ export default function Card(props) {
   return (
     <Link to={`/pokemons/${pokeId}?types=${pokeTypes}`} className="link">
       <div className={`pokemon-card ${pokeTypes[0]}`} key={name}>
-        {/* {console.log(name, pokeTypes)} */}
         <p className="name-small">{name}</p>
         {pokeTypes.map((type) => {
           return (

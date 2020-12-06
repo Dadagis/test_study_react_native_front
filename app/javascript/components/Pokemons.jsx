@@ -11,6 +11,7 @@ export default function Pokemons() {
   const [previousUrl, setPreviousUrl] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [user, setUser] = useState(false);
+  const [favorites, setFavorites] = useState();
 
   useEffect(() => {
     try {
@@ -27,7 +28,8 @@ export default function Pokemons() {
 
   useEffect(() => {
     setUser(isAuthenticated());
-  }, []);
+    fetchFavorites();
+  }, [loaded]);
 
   const displayPokemons = pokemons.map((pokemon) => {
     return <Card key={pokemon.name} name={pokemon.name} url={pokemon.url} />;
@@ -53,6 +55,12 @@ export default function Pokemons() {
         setLoaded(true);
       });
     }
+  };
+
+  const fetchFavorites = () => {
+    axios.get(`/api/v1/users/${user.id}`).then((r) => {
+      setFavorites(r.data.fav_pokemons);
+    });
   };
 
   return (

@@ -8,6 +8,7 @@ import ProgressBar from "./ProgressBar";
 
 export default function Pokemon(props) {
   const [user, setUser] = useState();
+  const [loaded, setLoaded] = useState(false);
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [name, setName] = useState("");
@@ -56,7 +57,10 @@ export default function Pokemon(props) {
 
   useEffect(() => {
     setUser(isAuthenticated());
-  }, []);
+    fetchUser();
+    setLoaded(true);
+    // setUser(isAuthenticated());
+  }, [id]);
 
   const calculateGenderRate = () => {
     if (genderRate != -1) {
@@ -70,6 +74,7 @@ export default function Pokemon(props) {
         </span>
       );
     } else {
+      return <span className="about-value">Unknown gender</span>;
     }
   };
 
@@ -88,19 +93,30 @@ export default function Pokemon(props) {
   };
 
   const handleFavorite = async () => {
-    try {
-      axios.post("/api/v1/liked_pokemons/", {
-        liked_pokemons: {
-          user_id: user.id,
-          pokemon_id: id,
-        },
-      });
-      fetchUser();
-    } catch (error) {
-      console.log(error);
+    if (!user.fav_pokemons.includes(id)) {
+      try {
+        axios
+          .post("/api/v1/liked_pokemons/", {
+            liked_pokemons: {
+              user_id: user.id,
+              pokemon_id: id,
+            },
+          })
+          .then((r) => fetchUser());
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      const payload = { liked_pokemons: { user_id: user.id, pokemon_id: id } };
+      try {
+        axios
+          .delete(`/api/v1/liked_pokemons/${id}`, { data: payload })
+          .then((r) => fetchUser());
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
-  console.log(user);
   return (
     <div className="container">
       <div
@@ -110,11 +126,16 @@ export default function Pokemon(props) {
       >
         <div className="pokemon-header">
           <i className="fas fa-arrow-left" onClick={handleClick}></i>
-          <i
-            style={{ display: user === false ? "none" : "block" }}
-            className="far fa-heart"
-            onClick={handleFavorite}
-          ></i>
+          {loaded ? (
+            <i
+              style={{
+                display: user === false ? "none" : "block",
+                color: user.fav_pokemons.includes(id) ? "red" : "white",
+              }}
+              className="far fa-heart"
+              onClick={handleFavorite}
+            ></i>
+          ) : null}
         </div>
         <h1 className="name-big">{name}</h1>
         <div className="types-div">

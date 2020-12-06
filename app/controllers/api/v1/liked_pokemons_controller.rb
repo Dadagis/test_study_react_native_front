@@ -1,4 +1,6 @@
 class Api::V1::LikedPokemonsController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
     def create
         user = User.find(liked_pokemons_params[:user_id])
         like = LikedPokemon.new(liked_pokemons_params)
@@ -8,7 +10,14 @@ class Api::V1::LikedPokemonsController < ApplicationController
     end
 
     def destroy
-        
+        puts "-----------------------------"
+        puts "je suis dans destroy"
+        puts params
+        user = User.find(liked_pokemons_params[:user_id])
+        to_destroy = LikedPokemon.find_by(user_id: liked_pokemons_params[:user_id], pokemon_id: params[:id])
+        puts "-----------------------------------"
+        puts to_destroy
+        LikedPokemon.destroy(to_destroy.id)
     end
 
     private

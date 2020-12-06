@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import "../style/details.css";
+import ProgressBar from "./ProgressBar";
 
 export default function Pokemon(props) {
   console.log(props);
@@ -50,6 +51,21 @@ export default function Pokemon(props) {
     setTypes(props.location.search.slice(7).split(","));
   }, []);
 
+  const calculateGenderRate = () => {
+    if (genderRate != -1) {
+      const female = (genderRate / 8) * 100;
+      const male = 100 - female;
+      return (
+        <span className="about-value">
+          <i id="male" class="fas fa-mars"></i>
+          {` ${male} %`} - <i id="female" class="fas fa-venus"></i>
+          {` ${female} %`}
+        </span>
+      );
+    } else {
+    }
+  };
+
   return (
     <div className="container">
       <div
@@ -57,7 +73,7 @@ export default function Pokemon(props) {
           props.location.search.slice(7).split(",")[0]
         }`}
       >
-        <h1 className="name">{name}</h1>
+        <h1 className="name-big">{name}</h1>
         <div className="types-div">
           {props.location.search
             .slice(7)
@@ -78,12 +94,38 @@ export default function Pokemon(props) {
         <img src={image} alt={name} className="large-image" />
       </div>
       <div className="pokemon-stats">
+        <h2 className="category">About</h2>
         <span className="stat-title">Height</span>
-        <span className="stat-value">{`${height / 10} m`}</span>
+        <span className="about-value">{`${height / 10} m`}</span>
         <span className="stat-title">Weight</span>
-        <span className="stat-value">{`${weight / 10} kg`}</span>
+        <span className="about-value">{`${weight / 10} kg`}</span>
         <span className="stat-title">Genre</span>
-        <span className="stat-value">{genera}</span>
+        <span className="about-value">{genera}</span>
+        <span className="stat-title">Capture rate</span>
+        <span className="about-value">
+          {`${Math.round((captureRate * 100) / 255)} %`}
+        </span>
+        <span className="stat-title">Gender</span>
+        {calculateGenderRate()}
+        <h2 className="category">Base stats</h2>
+        <span className="stat-title">HP</span>
+        <span className="stat-value">{hp}</span>
+        <ProgressBar baseStat={hp} />
+        <span className="stat-title">Attack</span>
+        <span className="stat-value">{attack}</span>
+        <ProgressBar baseStat={attack} />
+        <span className="stat-title">Defense</span>
+        <span className="stat-value">{defense}</span>
+        <ProgressBar baseStat={defense} />
+        <span className="stat-title">Special Attack</span>
+        <span className="stat-value">{specialAttack}</span>
+        <ProgressBar baseStat={specialAttack} />
+        <span className="stat-title">Special Defense</span>
+        <span className="stat-value">{specialDefense}</span>
+        <ProgressBar baseStat={specialDefense} />
+        <span className="stat-title">Speed</span>
+        <span className="stat-value">{speed}</span>
+        <ProgressBar baseStat={speed} />
       </div>
     </div>
   );

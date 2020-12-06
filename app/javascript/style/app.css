@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .pokemons-list {
@@ -31,12 +34,12 @@
 }
 
 .grass {
-  background-color: #83eba6;
+  background-color: #9bcc50;
   /* background-color: #0e9c94; */
 }
 
 .fire {
-  background-color: #ee7067;
+  background-color: #fd7d24;
 }
 
 .water {

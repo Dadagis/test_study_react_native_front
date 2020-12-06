@@ -31,7 +31,7 @@ export default function Card(props) {
     <Link to={`/pokemons/${pokeId}?types=${pokeTypes}`} className="link">
       <div className={`pokemon-card ${pokeTypes[0]}`} key={name}>
         {/* {console.log(name, pokeTypes)} */}
-        <p className="name">{name}</p>
+        <p className="name-small">{name}</p>
         {pokeTypes.map((type) => {
           return (
             <p key={type} className={`type ${pokeTypes[0]}`}>

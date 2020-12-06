@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
+import isAuthenticated from "../services/authService";
 
 import "../style/details.css";
 import ProgressBar from "./ProgressBar";
 
 export default function Pokemon(props) {
+  const [user, setUser] = useState();
   const [height, setHeight] = useState(0);
   const [weight, setWeight] = useState(0);
   const [name, setName] = useState("");
+  const [id, setId] = useState();
   const [image, setImage] = useState("");
   const [hp, setHp] = useState(0);
   const [attack, setAttack] = useState(0);
@@ -28,6 +31,7 @@ export default function Pokemon(props) {
         setHeight(r.data.height);
         setWeight(r.data.weight);
         setName(r.data.name);
+        setId(r.data.id);
         setImage(r.data.sprites.other.dream_world.front_default);
         setHp(r.data.stats[0].base_stat);
         setAttack(r.data.stats[1].base_stat);
@@ -50,6 +54,10 @@ export default function Pokemon(props) {
     setTypes(props.location.search.slice(7).split(","));
   }, []);
 
+  useEffect(() => {
+    setUser(isAuthenticated());
+  }, []);
+
   const calculateGenderRate = () => {
     if (genderRate != -1) {
       const female = (genderRate / 8) * 100;
@@ -69,6 +77,30 @@ export default function Pokemon(props) {
     props.history.push("/");
   };
 
+  const fetchUser = async () => {
+    try {
+      axios.get(`/api/v1/users/${user.id}`).then((r) => {
+        setUser(r.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFavorite = async () => {
+    try {
+      axios.post("/api/v1/liked_pokemons/", {
+        liked_pokemons: {
+          user_id: user.id,
+          pokemon_id: id,
+        },
+      });
+      fetchUser();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(user);
   return (
     <div className="container">
       <div
@@ -78,7 +110,11 @@ export default function Pokemon(props) {
       >
         <div className="pokemon-header">
           <i className="fas fa-arrow-left" onClick={handleClick}></i>
-          <i className="far fa-heart"></i>
+          <i
+            style={{ display: user === false ? "none" : "block" }}
+            className="far fa-heart"
+            onClick={handleFavorite}
+          ></i>
         </div>
         <h1 className="name-big">{name}</h1>
         <div className="types-div">

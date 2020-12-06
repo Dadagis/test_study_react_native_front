@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :pokemons
+      resources :liked_pokemons, only: [:create, :destroy]
       resources :notes
       resources :users
       resources :tokens, only: [:create]

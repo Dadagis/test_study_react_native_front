@@ -4,7 +4,7 @@ class Api::V1::TokensController < ApplicationController
         if user&.authenticate(params[:password])
             token = encode_token({id:user.id, email: user.email})
           render json: {
-            jwt: encode_token({id:user.id, email: user.email, fav_pokemons: user.favorite_pokemons})
+            jwt: encode_token({id:user.id, email: user.email, fav_pokemons: format_likes(user)})
         }
         else
           render json: {errors: "Invalid email or password"}, status: :unprocessable_entity
@@ -24,5 +24,13 @@ class Api::V1::TokensController < ApplicationController
       def decode_token(token)
         result = JWT.decode token, nil, false
         puts result
+      end
+
+      def format_likes(user)
+        array = []
+        user.liked_pokemons.map do |liked|
+           array << liked.pokemon_id
+        end
+        array
       end
   end

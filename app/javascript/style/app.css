@@ -146,3 +146,42 @@
 .steel {
   background-color: #9eb7b8;
 }
+
+.types-bar {
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  grid-column: 1 / 5;
+  width: 70%;
+  margin: 0.5rem auto;
+  padding: 1rem 0;
+  overflow: scroll;
+  height: 2.5rem;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.types-bar > span {
+  margin: 0 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.types-bar > span:hover {
+  transform: scale(1.05);
+}
+
+.main-tabs {
+  grid-column: 1 / 5;
+}
+
+.main-tabs > .react-tabs__tab-panel--selected {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.main-tabs > .react-tabs__tab-list {
+  display: flex;
+  overflow: scroll;
+}

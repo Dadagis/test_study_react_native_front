@@ -12,7 +12,9 @@ export default function Card(props) {
   useEffect(() => {
     let value = [];
     axios.get(url).then((r) => {
-      setImage(r.data.sprites.other.dream_world.front_default);
+      setImage(
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${r.data.id}.png`
+      );
       setPokeId(r.data.id);
       for (const key in r.data.types) {
         value.push(r.data.types[key].type.name);

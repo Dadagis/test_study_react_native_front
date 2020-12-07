@@ -91,23 +91,12 @@ export default function Pokemons() {
     }
   };
 
-  const handleTypeClick = ({ currentTarget: target }) => {
-    // setSelectedType(target.id);
-    // fetchType(target.id);
-  };
-
   const fetchType = async (type) => {
     console.log(type);
     await axios.get(`https://pokeapi.co/api/v2/type/${type}`).then((r) => {
       setSortedPokemons(r.data.pokemon);
     });
   };
-
-  //   const displayList = () => {
-  //     console.log("je suis dans type list");
-  //     console.log(typeList);
-  //     // typeList.map((name) => console.log(name));
-  //   };
 
   const fetchFavorites = () => {
     axios.get(`/api/v1/users/${user.id}`).then((r) => {
@@ -129,7 +118,11 @@ export default function Pokemons() {
             <Tab>All</Tab>
             {loaded &&
               types.map((type, index) => {
-                return <Tab onClick={() => fetchType(index + 1)}>{type}</Tab>;
+                return (
+                  <Tab key={type} onClick={() => fetchType(index + 1)}>
+                    {type}
+                  </Tab>
+                );
               })}
           </TabList>
 
@@ -138,7 +131,7 @@ export default function Pokemons() {
           </TabPanel>
           {types.map((type) => {
             return (
-              <TabPanel className="main-tab-panel">
+              <TabPanel key={type} className="main-tab-panel">
                 {displaySortedPokemons}
               </TabPanel>
             );

@@ -11,6 +11,7 @@
 }
 
 .grid {
+  overflow: hidden;
   width: 70%;
   margin: auto;
   display: grid;
@@ -27,13 +28,14 @@
   margin-left: 0.5rem;
   color: rgb(46, 46, 46);
   font-size: 3rem;
-  /* margin-left: 5rem; */
+  z-index: 10;
 }
 
 .main-header {
   grid-column: span 4 / span 1;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .main-header > .login-link {
@@ -43,6 +45,7 @@
   font-weight: bold;
   font-size: 1.05rem;
   text-decoration: none;
+  z-index: 10;
 }
 
 .page-selector {
@@ -184,4 +187,15 @@
 .main-tabs > .react-tabs__tab-list {
   display: flex;
   overflow: scroll;
+}
+
+.svg {
+  position: absolute;
+  transform: rotate(-45deg);
+  opacity: 0.5;
+  height: 19rem;
+  z-index: 0;
+  right: 0;
+  margin-top: -6rem;
+  margin-right: -5rem;
 }

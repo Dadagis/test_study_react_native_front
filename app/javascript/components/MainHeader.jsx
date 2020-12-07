@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import mySvg from "../../assets/images/pokemon.svg";
 
 export default function MainHeader(props) {
   const { user } = props;
@@ -27,6 +28,7 @@ export default function MainHeader(props) {
 
   return (
     <div className="main-header">
+      <img className="svg" src={mySvg} alt="pokeball" />
       <h1 className="title">Pokedex</h1>
       {loginOrOut()}
     </div>

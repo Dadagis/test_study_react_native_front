@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/card.css";
 import { Link } from "react-router-dom";
+import mySvg from "../../assets/images/pokemon.svg";
 
 export default function Card(props) {
   const { name, url } = props;
@@ -41,6 +42,7 @@ export default function Card(props) {
         })}
         <p className="id">{`#${stringifyPokeId()}`}</p>
         <img className="image" src={image} alt={name} />
+        <img className="tiny-svg" src={mySvg} alt="pokeball" />
       </div>
     </Link>
   );

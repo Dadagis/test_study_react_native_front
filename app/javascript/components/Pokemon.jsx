@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import isAuthenticated from "../services/authService";
 
 import "../style/details.css";
+import AboutInfo from "./AboutInfo";
 import ProgressBar from "./ProgressBar";
 
 export default function Pokemon(props) {
@@ -154,7 +155,15 @@ export default function Pokemon(props) {
       </div>
       <div className="pokemon-stats">
         <h2 className="category">About</h2>
-        <span className="stat-title">Height</span>
+        <AboutInfo data={`${height / 10} m`} label="Height" />
+        <AboutInfo data={`${weight / 10} kg`} label="Weight" />
+        <AboutInfo data={genera} label="Genre" />
+        <AboutInfo
+          data={`${Math.round((captureRate * 100) / 255)} %`}
+          label="Capture rate"
+        />
+        <AboutInfo data={calculateGenderRate()} label="Gender rate" />
+        {/* <span className="stat-title">Height</span>
         <span className="about-value">{`${height / 10} m`}</span>
         <span className="stat-title">Weight</span>
         <span className="about-value">{`${weight / 10} kg`}</span>
@@ -165,7 +174,7 @@ export default function Pokemon(props) {
           {`${Math.round((captureRate * 100) / 255)} %`}
         </span>
         <span className="stat-title">Gender</span>
-        {calculateGenderRate()}
+        {calculateGenderRate()} */}
         <h2 className="category">Base stats</h2>
         <span className="stat-title">HP</span>
         <span className="stat-value">{hp}</span>

@@ -6,6 +6,7 @@ import isAuthenticated from "../services/authService";
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
 import ProgressBar from "./ProgressBar";
+import StatInfo from "./StatInfo";
 
 export default function Pokemon(props) {
   const [user, setUser] = useState();
@@ -163,37 +164,13 @@ export default function Pokemon(props) {
           label="Capture rate"
         />
         <AboutInfo data={calculateGenderRate()} label="Gender rate" />
-        {/* <span className="stat-title">Height</span>
-        <span className="about-value">{`${height / 10} m`}</span>
-        <span className="stat-title">Weight</span>
-        <span className="about-value">{`${weight / 10} kg`}</span>
-        <span className="stat-title">Genre</span>
-        <span className="about-value">{genera}</span>
-        <span className="stat-title">Capture rate</span>
-        <span className="about-value">
-          {`${Math.round((captureRate * 100) / 255)} %`}
-        </span>
-        <span className="stat-title">Gender</span>
-        {calculateGenderRate()} */}
         <h2 className="category">Base stats</h2>
-        <span className="stat-title">HP</span>
-        <span className="stat-value">{hp}</span>
-        <ProgressBar baseStat={hp} />
-        <span className="stat-title">Attack</span>
-        <span className="stat-value">{attack}</span>
-        <ProgressBar baseStat={attack} />
-        <span className="stat-title">Defense</span>
-        <span className="stat-value">{defense}</span>
-        <ProgressBar baseStat={defense} />
-        <span className="stat-title">Special Attack</span>
-        <span className="stat-value">{specialAttack}</span>
-        <ProgressBar baseStat={specialAttack} />
-        <span className="stat-title">Special Defense</span>
-        <span className="stat-value">{specialDefense}</span>
-        <ProgressBar baseStat={specialDefense} />
-        <span className="stat-title">Speed</span>
-        <span className="stat-value">{speed}</span>
-        <ProgressBar baseStat={speed} />
+        <StatInfo data={hp} label="HP" />
+        <StatInfo data={attack} label="Attack" />
+        <StatInfo data={defense} label="Defense" />
+        <StatInfo data={specialAttack} label="Special Attack" />
+        <StatInfo data={specialDefense} label="Special Defense" />
+        <StatInfo data={speed} label="Speed" />
       </div>
     </div>
   );

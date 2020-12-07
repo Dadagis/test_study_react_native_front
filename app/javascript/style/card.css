@@ -1,9 +1,9 @@
 .pokemon-card {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   grid-column: span 1 / span 1;
   position: relative;
-  /* background-color: #abedc6; */
   height: 6rem;
   width: 10rem;
   border-radius: 1.2rem;
@@ -31,9 +31,8 @@
   margin-bottom: 0.5rem;
   font-size: small;
   text-transform: capitalize;
-  /* color: white; */
+  color: white;
   font-weight: bold;
-  /* background-color: #abedc6; */
 }
 
 .id {
@@ -70,4 +69,5 @@
   bottom: 0;
   opacity: 0.5;
   z-index: 0;
+  margin-bottom: -1rem;
 }

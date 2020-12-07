@@ -4,6 +4,7 @@
 }
 
 .pokemon-details {
+  overflow: hidden;
   width: 70%;
   margin: auto;
   border-radius: 1.2rem;
@@ -157,4 +158,14 @@
   grid-column: 2 / 10;
   color: #444444;
   padding: 0.3rem 0;
+}
+
+.large-svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: -9rem;
+  opacity: 0.65;
+  z-index: 0;
+  margin-right: 3rem;
 }

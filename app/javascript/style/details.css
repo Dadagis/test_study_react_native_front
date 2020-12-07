@@ -199,6 +199,16 @@
   margin-right: 3rem;
 }
 
+.delete-mark {
+  color: rgb(247, 61, 28);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.delete-mark:hover {
+  filter: brightness(2.2);
+}
+
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .container {
     width: 80vw;

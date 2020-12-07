@@ -27,15 +27,36 @@ export default function Notes(props) {
     }
   };
 
+  const handleDelete = async (noteId) => {
+    console.log("je suis dans handle delete");
+    const payload = {
+      note: { note_id: noteId, user_id: user.id, pokemon_number: id },
+    };
+    try {
+      axios.delete(`/api/v1/notes/${noteId}`, { data: payload }).then((r) => {
+        setUser(r.data);
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const handleChange = ({ currentTarget: input }) => {
     setValue(input.value);
   };
 
   const displayNotes = user.notes.map((note) => {
     return (
-      <p key={note.id} className="note">
-        {note.content}
-      </p>
+      <Fragment key={`${note.id} ${id}`}>
+        <p key={note.id} className="note">
+          {note.content}
+        </p>
+        <i
+          key={note.content}
+          onClick={() => handleDelete(note.id)}
+          className="fas fa-times-circle delete-mark"
+        ></i>
+      </Fragment>
     );
   });
 

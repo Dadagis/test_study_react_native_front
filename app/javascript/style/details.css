@@ -114,10 +114,13 @@
 }
 
 .react-tabs__tab-list {
+  color: #444444;
   border-bottom: 2px solid #efefef;
 }
 
 .react-tabs__tab--selected {
+  color: #444444;
+  font-weight: bold;
   background: none;
   padding-bottom: 1rem;
   border: none;
@@ -156,4 +159,6 @@
 
 .note {
   grid-column: 2 / 10;
+  color: #444444;
+  padding: 0.3rem 0;
 }

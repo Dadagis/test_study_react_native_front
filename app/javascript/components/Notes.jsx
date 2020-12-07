@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Notes(props) {
-  const { user, id } = props;
+  const { userInfos, id } = props;
+  const [user, setUser] = useState(userInfos);
   const [value, setValue] = useState("");
 
   const handleClick = async (e) => {
@@ -18,7 +19,7 @@ export default function Notes(props) {
           },
         })
         .then((response) => {
-          console.log(response);
+          setUser(response.data);
         });
     } catch (error) {
       console.log(error.message);
@@ -29,9 +30,17 @@ export default function Notes(props) {
     setValue(input.value);
   };
 
+  const displayNotes = user.notes.map((note) => {
+    return (
+      <p key={note.id} className="note">
+        {note.content}
+      </p>
+    );
+  });
+
   return (
     <Fragment>
-      <p className="note">Je suis une note sur un pokémon</p>
+      {displayNotes}
       <form className="note-form">
         <textarea
           className="note-input"

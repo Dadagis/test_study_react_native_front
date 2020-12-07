@@ -8,7 +8,8 @@ class Api::V1::UsersController < ApplicationController
 
   def show
       user = User.find(params[:id])
-      render json: {id:user.id, email: user.email, fav_pokemons: format_likes(user)}
+      puts user.notes.where(pokemon_number: params[:pokemon_id])
+      render json: {id:user.id, email: user.email, fav_pokemons: format_likes(user), notes: user.notes.where(pokemon_number: params[:pokemon_id])}
   end
   
   def create
@@ -36,7 +37,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :favorite_pokemons)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :favorite_pokemons, :pokemon_id)
   end
 
   def encode_token(payload={})

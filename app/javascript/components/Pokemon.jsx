@@ -92,7 +92,7 @@ export default function Pokemon(props) {
 
   const fetchUser = async () => {
     try {
-      axios.get(`/api/v1/users/${user.id}`).then((r) => {
+      axios.get(`/api/v1/users/${user.id}?pokemon_id=${id}`).then((r) => {
         setUser(r.data);
       });
     } catch (error) {
@@ -174,7 +174,7 @@ export default function Pokemon(props) {
               <StatInfo data={speed} label="Speed" />
             </TabPanel>
             <TabPanel className="tab-panel">
-              <Notes user={user} id={id} />
+              <Notes userInfos={user} id={id} />
             </TabPanel>
           </Tabs>
         )}

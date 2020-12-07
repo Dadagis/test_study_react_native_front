@@ -31,6 +31,7 @@ export default function Pokemons() {
     "Water",
     "Grass",
     "Electric",
+    "Psychic",
     "Ice",
     "Dragon",
     "Dark",

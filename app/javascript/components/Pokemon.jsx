@@ -6,6 +6,7 @@ import isAuthenticated from "../services/authService";
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
 import PokemonHeader from "./PokemonHeader";
+import PokemonTypes from "./PokemonTypes";
 import ProgressBar from "./ProgressBar";
 import StatInfo from "./StatInfo";
 
@@ -134,32 +135,8 @@ export default function Pokemon(props) {
           id={id}
           loaded={loaded}
         />
-        {/* <div className="pokemon-header">
-          <i className="fas fa-arrow-left" onClick={handleClick}></i>
-          {loaded ? (
-            <i
-              style={{
-                display: user === false ? "none" : "block",
-                color: user.fav_pokemons.includes(id) ? "red" : "white",
-              }}
-              className="far fa-heart"
-              onClick={handleFavorite}
-            ></i>
-          ) : null}
-        </div> */}
         <h1 className="name-big">{name}</h1>
-        <div className="types-div">
-          {props.location.search
-            .slice(7)
-            .split(",")
-            .map((type) => {
-              return (
-                <p key={type} className={`type ${type}`}>
-                  {type}
-                </p>
-              );
-            })}
-        </div>
+        <PokemonTypes types={props.location.search} />
         <img src={image} alt={name} className="large-image" />
       </div>
       <div className="pokemon-stats">

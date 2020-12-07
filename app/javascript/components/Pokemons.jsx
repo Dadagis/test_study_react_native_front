@@ -6,7 +6,6 @@ import MainHeader from "./MainHeader";
 import isAuthenticated from "../services/authService";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import TypeSelect from "./TypeSelect";
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);

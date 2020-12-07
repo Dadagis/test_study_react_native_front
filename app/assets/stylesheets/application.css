@@ -13,11 +13,11 @@
  *= require_tree .
  *= require_self
  */
-@import "../../javascript/style/app.css";
+/* @import "../../javascript/style/app.css";
 @import "../../javascript/style/card.css";
 @import "../../javascript/style/details.css";
 @import "../../javascript/style/login.css";
 @import "pages/_app.scss";
 @import "pages/_card.scss";
 @import "pages/_details.scss";
-@import "pages/_login.scss";
+@import "pages/_login.scss"; */

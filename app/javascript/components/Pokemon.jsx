@@ -5,6 +5,7 @@ import isAuthenticated from "../services/authService";
 
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
+import PokemonHeader from "./PokemonHeader";
 import ProgressBar from "./ProgressBar";
 import StatInfo from "./StatInfo";
 
@@ -126,7 +127,14 @@ export default function Pokemon(props) {
           props.location.search.slice(7).split(",")[0]
         }`}
       >
-        <div className="pokemon-header">
+        <PokemonHeader
+          previous={handleClick}
+          favorite={handleFavorite}
+          user={user}
+          id={id}
+          loaded={loaded}
+        />
+        {/* <div className="pokemon-header">
           <i className="fas fa-arrow-left" onClick={handleClick}></i>
           {loaded ? (
             <i
@@ -138,7 +146,7 @@ export default function Pokemon(props) {
               onClick={handleFavorite}
             ></i>
           ) : null}
-        </div>
+        </div> */}
         <h1 className="name-big">{name}</h1>
         <div className="types-div">
           {props.location.search

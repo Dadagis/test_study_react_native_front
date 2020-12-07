@@ -78,7 +78,7 @@ export default function Register(props) {
           </div>
         </form>
         <div className="link-div">
-          <Link to="/login" className="link">
+          <Link to="/login" className="login-link">
             J'ai déja un compte
           </Link>
         </div>

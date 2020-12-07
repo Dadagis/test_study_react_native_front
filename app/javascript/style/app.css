@@ -205,47 +205,35 @@
   margin-right: -5rem;
 }
 
-/* @media (max-width: 1024px) {
-  .grid {
-    overflow: hidden;
-    width: 75%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .pokemons-list {
+    width: 80vw;
   }
 
+  .grid {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .main-header > .login-link {
+    font-size: 1.05rem;
+  }
+
+  .page-selector > button {
+    font-size: 1rem;
+  }
+
+  .main-tabs > .react-tabs__tab-panel--selected {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .main-tabs > .react-tabs__tab-panel--selected {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
-@media (max-width: 768px) {
-  .grid {
-    overflow: hidden;
-    width: 85%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-
-  .main-tabs > .react-tabs__tab-panel--selected {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .main-tabs > .react-tabs__tab-panel--selected {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-} */

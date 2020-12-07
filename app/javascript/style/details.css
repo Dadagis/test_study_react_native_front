@@ -198,3 +198,96 @@
   z-index: 0;
   margin-right: 3rem;
 }
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .container {
+    width: 80vw;
+  }
+
+  .pokemon-details {
+    width: 70vw;
+  }
+
+  .types-div > p {
+    font-size: 1rem;
+  }
+
+  .large-image {
+    height: auto;
+  }
+
+  .pokemon-stats {
+    height: auto;
+    width: 70%;
+  }
+
+  .stat-title {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .about-value {
+    font-size: 1rem;
+  }
+
+  .category {
+    font-size: 1rem;
+  }
+
+  .name-big {
+    font-size: 3rem;
+  }
+
+  .pokemon-header {
+    font-size: 2rem;
+  }
+
+  .react-tabs__tab--selected {
+    font-size: 1rem;
+  }
+
+  .tab-panel {
+    grid-gap: 1rem;
+  }
+
+  .note-form {
+    grid-column: 3 / 9;
+  }
+
+  .note-form > button {
+    font-size: 1rem;
+  }
+
+  .note-input {
+    height: 4rem;
+  }
+
+  .note {
+    font-size: 1rem;
+  }
+
+  .react-tabs__tab {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .pokemon-header > i {
+    font-size: 4rem;
+  }
+
+  .name-big {
+    font-size: 6rem;
+  }
+
+  .types-div > p {
+    font-size: 2rem;
+  }
+
+  .large-image {
+    height: 26rem;
+  }
+}

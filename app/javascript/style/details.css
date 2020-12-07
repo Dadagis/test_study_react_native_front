@@ -129,3 +129,8 @@
   grid-template-columns: repeat(10, minmax(0, 1fr));
   grid-gap: 1rem;
 }
+
+.note-input {
+  grid-column: 3 / 9;
+  height: 4rem;
+}

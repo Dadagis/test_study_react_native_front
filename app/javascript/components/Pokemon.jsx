@@ -6,6 +6,7 @@ import isAuthenticated from "../services/authService";
 
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
+import Notes from "./Notes";
 import PokemonHeader from "./PokemonHeader";
 import PokemonTypes from "./PokemonTypes";
 import StatInfo from "./StatInfo";
@@ -172,7 +173,9 @@ export default function Pokemon(props) {
               <StatInfo data={specialDefense} label="Special Defense" />
               <StatInfo data={speed} label="Speed" />
             </TabPanel>
-            <TabPanel className="tab-panel"></TabPanel>
+            <TabPanel className="tab-panel">
+              <Notes />
+            </TabPanel>
           </Tabs>
         )}
       </div>

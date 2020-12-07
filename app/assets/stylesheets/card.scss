@@ -1,0 +1,136 @@
+.pokemon-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 1 / span 1;
+  position: relative;
+  height: 17rem;
+  /* width 10 */
+  width: 25rem;
+  border-radius: 1.2rem;
+  padding: 2rem 0.75rem;
+  margin: 0.5rem auto;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.name-small {
+  text-transform: capitalize;
+  font-weight: 700;
+  /* default large */
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.type {
+  border-radius: 50px;
+  filter: brightness(1.085);
+  max-width: fit-content;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  /* default small */
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
+
+.id {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  filter: opacity(0.25);
+  /* default 0 */
+  font-size: 2rem;
+}
+
+.image {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  /* default 4.5 */
+  height: 12rem;
+  width: 12rem;
+  z-index: 10;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  transform: scale(1.05);
+}
+
+.tiny-svg {
+  position: absolute;
+  /* default 6.2 */
+  height: 14rem;
+  right: 1rem;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 0;
+  margin-bottom: -1rem;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .pokemon-card {
+    height: 6rem;
+    width: 10rem;
+  }
+
+  .name-small {
+    font-size: large;
+  }
+
+  .type {
+    font-size: small;
+  }
+
+  .id {
+    font-size: 1rem;
+  }
+
+  .image {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .tiny-svg {
+    height: 6.2rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .pokemon-card {
+    width: 16rem;
+    height: 13rem;
+  }
+
+  .image {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .tiny-svg {
+    height: 11rem;
+  }
+
+  .name-small {
+    font-size: 2.2rem;
+  }
+
+  .type {
+    font-size: 1.5rem;
+  }
+
+  .id {
+    font-size: 1.5rem;
+  }
+}

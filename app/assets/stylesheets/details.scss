@@ -1,0 +1,338 @@
+.container {
+  /* width: 80vw; */
+  margin: auto;
+}
+
+.pokemon-details {
+  overflow: hidden;
+  /* width: 70%; */
+  margin: auto;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.types-div {
+  display: flex;
+}
+
+.types-div > p {
+  padding: 0.35rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
+  /* default 0 */
+  font-size: 2.5rem;
+}
+
+.large-image {
+  /* default 0 */
+  height: 30rem;
+  z-index: 30;
+}
+
+.pokemon-stats {
+  /* default none */
+  height: 100vh;
+  /* width: 70%; */
+  margin: auto;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  z-index: 20;
+  margin-top: -2rem;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.stat-title {
+  grid-column: span 1 / span 2;
+  grid-column-start: 1;
+  font-weight: bold;
+  color: #9b9b9b;
+  /* default */
+  font-size: 2.5rem;
+}
+
+.stat-value {
+  grid-column: span 1 / span 1;
+  grid-column-start: 3;
+  font-weight: bold;
+  color: #444444;
+  /* default 0 */
+  font-size: 2.5rem;
+}
+
+.about-value {
+  grid-column: span 1 / span 8;
+  grid-column-start: 4;
+  color: #444444;
+  /* default 0 */
+  font-size: 2.5rem;
+}
+
+#male {
+  color: rgb(0, 174, 255);
+}
+
+#female {
+  color: rgb(250, 106, 190);
+}
+
+.category {
+  grid-column: span 10 / span 1;
+  margin: 1rem 0;
+  color: rgb(46, 46, 46);
+  /* default 0 */
+  font-size: 4rem;
+}
+
+.bar-container {
+  height: 2px;
+  width: 100%;
+  background-color: #e0e0de;
+  border-radius: 50;
+  grid-column: span 6 / span 1;
+}
+
+.name-big {
+  font-weight: bold;
+  /* default 3rem */
+  font-size: 7rem;
+  text-transform: capitalize;
+}
+
+.pokemon-header {
+  display: flex;
+  justify-content: space-between;
+  /* default 2rem */
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  z-index: 10;
+}
+
+.pokemon-header > i {
+  transition: all 0.2s ease-in-out;
+}
+
+.pokemon-header > i:hover {
+  transform: scale(1.05);
+}
+
+.react-tabs__tab-list {
+  color: #444444;
+  border-bottom: 2px solid #efefef;
+}
+
+.react-tabs__tab--selected {
+  color: #444444;
+  font-weight: bold;
+  background: none;
+  padding-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid #7b62a3;
+  /* default 0 */
+  font-size: 2rem;
+}
+
+.react-tabs__tab {
+  font-size: 2rem;
+}
+
+.tab-panel {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  /* defautl 1 */
+  grid-gap: 2.5rem;
+}
+
+.note-form {
+  /* default 3 / 9 */
+  grid-column: 2 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-form > button {
+  width: 25%;
+  border-radius: 0.5rem;
+  background-color: rgb(173, 146, 236);
+  border-color: rgb(153, 117, 236);
+  color: white;
+  font-weight: bold;
+  outline: none;
+  font-size: 3rem;
+  /* default 0 */
+}
+
+.note-input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  /* default 4 */
+  height: 8rem;
+  padding: 0.5rem;
+  font-size: 3rem;
+}
+
+.note {
+  grid-column: 2 / 10;
+  color: #444444;
+  padding: 0.3rem 0;
+  /* default none */
+  font-size: 3rem;
+}
+
+.large-svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: -9rem;
+  opacity: 0.35;
+  z-index: 0;
+  margin-right: 3rem;
+}
+
+.square-svg-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0.3;
+  transform: rotate(74deg);
+  margin-left: -12rem;
+  margin-top: -7rem;
+}
+
+.delete-mark {
+  color: rgb(247, 61, 28);
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.delete-mark:hover {
+  filter: brightness(2.2);
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .container {
+    width: 80vw;
+  }
+
+  .pokemon-details {
+    width: 70%;
+  }
+
+  .types-div > p {
+    font-size: 1rem;
+  }
+
+  .large-image {
+    height: auto;
+  }
+
+  .pokemon-stats {
+    height: auto;
+    width: 70%;
+  }
+
+  .stat-title {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .about-value {
+    font-size: 1rem;
+  }
+
+  .category {
+    font-size: 1rem;
+  }
+
+  .name-big {
+    font-size: 3rem;
+  }
+
+  .pokemon-header {
+    font-size: 2rem;
+  }
+
+  .react-tabs__tab--selected {
+    font-size: 1rem;
+  }
+
+  .tab-panel {
+    grid-gap: 1rem;
+  }
+
+  .note-form {
+    grid-column: 3 / 9;
+  }
+
+  .note-form > button {
+    font-size: 1rem;
+  }
+
+  .note-input {
+    height: 4rem;
+    font-size: 1rem;
+  }
+
+  .note {
+    font-size: 1rem;
+  }
+
+  .react-tabs__tab {
+    font-size: 1rem;
+  }
+
+  .delete-mark {
+    font-size: 1.2rem;
+  }
+
+  .square-svg-2 {
+    margin-left: -21rem;
+    margin-top: -17rem;
+  }
+
+  .large-svg {
+    height: 26rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .pokemon-header > i {
+    font-size: 4rem;
+  }
+
+  .name-big {
+    font-size: 6rem;
+  }
+
+  .types-div > p {
+    font-size: 2rem;
+  }
+
+  .large-image {
+    height: 26rem;
+  }
+
+  .delete-mark {
+    font-size: 2.5rem;
+  }
+
+  .square-svg-2 {
+    margin-left: -15rem;
+    margin-top: -10rem;
+  }
+}

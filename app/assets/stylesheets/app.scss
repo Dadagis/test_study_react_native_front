@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.pokemons-list {
+  /* width: 80vw; */
+  margin: auto;
+}
+
+.grid {
+  overflow: hidden;
+  /* width: 70%; */
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.title {
+  grid-column: span 4 / span 1;
+  margin-top: 4rem;
+  margin-left: 0.5rem;
+  color: rgb(46, 46, 46);
+  /* 3rem */
+  font-size: 5.5rem;
+  z-index: 10;
+}
+
+.main-header {
+  grid-column: span 4 / span 1;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.main-header > .login-link {
+  margin-top: 2rem;
+  margin-right: 0.5rem;
+  color: #7b62a3;
+  font-weight: bold;
+  /* default 1.05 */
+  font-size: 2rem;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.page-selector {
+  max-width: fit-content;
+  margin: 2rem auto 2rem;
+  grid-column: span 4 / span 1;
+}
+
+.page-selector > button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(173, 146, 236);
+  color: white;
+  font-weight: bold;
+  border-color: rgb(153, 117, 236);
+  outline: none;
+  /* default 0 */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.page-selector > button:disabled {
+  cursor: auto;
+  opacity: 0.4;
+}
+
+.grass {
+  background-color: #9bcc50;
+  /* background-color: #0e9c94; */
+}
+
+.fire {
+  background-color: #fd7d24;
+}
+
+.water {
+  background-color: #4592c4;
+}
+
+.bug {
+  background-color: #729f3f;
+}
+
+.flying {
+  background: linear-gradient(180deg, #3dc7ef, #bdb9b8);
+}
+
+.type.flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+}
+
+.normal {
+  background-color: #a4acaf;
+}
+
+.poison {
+  background-color: #b97fc9;
+}
+
+.electric {
+  background-color: #eed535;
+}
+
+.ground {
+  background: linear-gradient(180deg, #f7de3f, #ab9842);
+}
+
+.type.ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+}
+
+.fairy {
+  background-color: #fdb9e9;
+}
+
+.fighting {
+  background-color: #d56723;
+}
+
+.psychic {
+  background-color: #f366b9;
+}
+
+.rock {
+  background-color: #a38c21;
+}
+
+.ghost {
+  background-color: #7b62a3;
+}
+
+.ice {
+  background-color: #7b62a3;
+}
+
+.dragon {
+  background: linear-gradient(180deg, #53a4cf, #f16e57);
+}
+
+.type.dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+
+.dark {
+  background-color: #707070;
+}
+
+.steel {
+  background-color: #9eb7b8;
+}
+
+.types-bar {
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  grid-column: 1 / 5;
+  width: 70%;
+  margin: 0.5rem auto;
+  padding: 1rem 0;
+  overflow: scroll;
+  height: 2.5rem;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.types-bar > span {
+  margin: 0 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.types-bar > span:hover {
+  transform: scale(1.05);
+}
+
+.main-tabs {
+  grid-column: 1 / 5;
+}
+
+.main-tabs > .react-tabs__tab-panel--selected {
+  display: grid;
+  /* 4 default */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.main-tabs > .react-tabs__tab-list {
+  display: flex;
+  overflow: scroll;
+}
+
+.svg {
+  position: absolute;
+  transform: rotate(-45deg);
+  opacity: 0.5;
+  height: 19rem;
+  z-index: 0;
+  right: 0;
+  margin-top: -6rem;
+  margin-right: -5rem;
+}
+
+.square-svg {
+  position: absolute;
+  height: 22rem;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transform: rotate(77deg);
+  margin-top: -5rem;
+  margin-left: -3rem;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .pokemons-list {
+    width: 80vw;
+  }
+
+  .grid {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .main-header > .login-link {
+    font-size: 1.05rem;
+  }
+
+  .page-selector > button {
+    font-size: 1rem;
+  }
+
+  .main-tabs > .react-tabs__tab-panel--selected {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .square-svg {
+    height: 16rem;
+    margin-top: -4rem;
+    margin-left: -5rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .main-tabs > .react-tabs__tab-panel--selected {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

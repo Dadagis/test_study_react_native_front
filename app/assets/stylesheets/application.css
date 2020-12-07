@@ -17,3 +17,7 @@
 @import "../../javascript/style/card.css";
 @import "../../javascript/style/details.css";
 @import "../../javascript/style/login.css";
+@import "./app.scss";
+@import "./card.scss";
+@import "./details.scss";
+@import "./login.scss";

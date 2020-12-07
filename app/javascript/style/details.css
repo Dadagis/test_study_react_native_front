@@ -130,7 +130,30 @@
   grid-gap: 1rem;
 }
 
-.note-input {
+.note-form {
   grid-column: 3 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-form > button {
+  width: 25%;
+  border-radius: 0.5rem;
+  background-color: rgb(173, 146, 236);
+  border-color: rgb(153, 117, 236);
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+
+.note-input {
+  width: 100%;
+  margin-bottom: 0.5rem;
   height: 4rem;
+  padding: 0.5rem;
+}
+
+.note {
+  grid-column: 2 / 10;
 }

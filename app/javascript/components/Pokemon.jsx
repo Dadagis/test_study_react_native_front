@@ -174,7 +174,7 @@ export default function Pokemon(props) {
               <StatInfo data={speed} label="Speed" />
             </TabPanel>
             <TabPanel className="tab-panel">
-              <Notes />
+              <Notes user={user} id={id} />
             </TabPanel>
           </Tabs>
         )}

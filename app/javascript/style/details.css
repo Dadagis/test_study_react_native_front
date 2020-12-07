@@ -205,7 +205,7 @@
   }
 
   .pokemon-details {
-    width: 70vw;
+    width: 70%;
   }
 
   .types-div > p {
@@ -263,6 +263,7 @@
 
   .note-input {
     height: 4rem;
+    font-size: 1rem;
   }
 
   .note {

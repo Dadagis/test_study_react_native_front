@@ -60,8 +60,12 @@ export default function Pokemon(props) {
   }, []);
 
   useEffect(() => {
-    setUser(isAuthenticated());
-    fetchUser();
+    if (isAuthenticated()) {
+      setUser(isAuthenticated());
+      fetchUser();
+    } else {
+      setUser({ fav_pokemons: [], logged: false });
+    }
     setLoaded(true);
   }, [id]);
 
@@ -140,34 +144,37 @@ export default function Pokemon(props) {
         <img src={image} alt={name} className="large-image" />
       </div>
       <div className="pokemon-stats">
-        <Tabs className="tabs">
-          <TabList>
-            <Tab>About</Tab>
-            <Tab>Notes</Tab>
-          </TabList>
+        {loaded && (
+          <Tabs className="tabs">
+            <TabList>
+              <Tab>About</Tab>
+              <Tab>Base Stats</Tab>
+              <Tab disabled={user.logged === false ? true : false}>Notes</Tab>
+            </TabList>
 
-          <TabPanel className="tab-panel">
-            <h2 className="category">About</h2>
-            <AboutInfo data={`${height / 10} m`} label="Height" />
-            <AboutInfo data={`${weight / 10} kg`} label="Weight" />
-            <AboutInfo data={genera} label="Genre" />
-            <AboutInfo
-              data={`${Math.round((captureRate * 100) / 255)} %`}
-              label="Capture rate"
-            />
-            <AboutInfo data={calculateGenderRate()} label="Gender rate" />
-            <h2 className="category">Base stats</h2>
-            <StatInfo data={hp} label="HP" />
-            <StatInfo data={attack} label="Attack" />
-            <StatInfo data={defense} label="Defense" />
-            <StatInfo data={specialAttack} label="Special Attack" />
-            <StatInfo data={specialDefense} label="Special Defense" />
-            <StatInfo data={speed} label="Speed" />
-          </TabPanel>
-          <TabPanel>
-            <h2>Any content 2</h2>
-          </TabPanel>
-        </Tabs>
+            <TabPanel className="tab-panel">
+              <h2 className="category">About</h2>
+              <AboutInfo data={`${height / 10} m`} label="Height" />
+              <AboutInfo data={`${weight / 10} kg`} label="Weight" />
+              <AboutInfo data={genera} label="Genre" />
+              <AboutInfo
+                data={`${Math.round((captureRate * 100) / 255)} %`}
+                label="Capture rate"
+              />
+              <AboutInfo data={calculateGenderRate()} label="Gender rate" />
+            </TabPanel>
+            <TabPanel className="tab-panel">
+              <h2 className="category">Base stats</h2>
+              <StatInfo data={hp} label="HP" />
+              <StatInfo data={attack} label="Attack" />
+              <StatInfo data={defense} label="Defense" />
+              <StatInfo data={specialAttack} label="Special Attack" />
+              <StatInfo data={specialDefense} label="Special Defense" />
+              <StatInfo data={speed} label="Speed" />
+            </TabPanel>
+            <TabPanel className="tab-panel"></TabPanel>
+          </Tabs>
+        )}
       </div>
     </div>
   );

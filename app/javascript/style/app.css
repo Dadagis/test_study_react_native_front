@@ -6,13 +6,13 @@
 }
 
 .pokemons-list {
-  width: 80vw;
+  /* width: 80vw; */
   margin: auto;
 }
 
 .grid {
   overflow: hidden;
-  width: 70%;
+  /* width: 70%; */
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -27,7 +27,8 @@
   margin-top: 4rem;
   margin-left: 0.5rem;
   color: rgb(46, 46, 46);
-  font-size: 3rem;
+  /* 3rem */
+  font-size: 5.5rem;
   z-index: 10;
 }
 
@@ -43,7 +44,8 @@
   margin-right: 0.5rem;
   color: #7b62a3;
   font-weight: bold;
-  font-size: 1.05rem;
+  /* default 1.05 */
+  font-size: 2rem;
   text-decoration: none;
   z-index: 10;
 }
@@ -63,6 +65,8 @@
   font-weight: bold;
   border-color: rgb(153, 117, 236);
   outline: none;
+  /* default 0 */
+  font-size: 2rem;
 }
 
 .grass {
@@ -181,7 +185,8 @@
 
 .main-tabs > .react-tabs__tab-panel--selected {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* 4 default */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .main-tabs > .react-tabs__tab-list {
@@ -199,3 +204,48 @@
   margin-top: -6rem;
   margin-right: -5rem;
 }
+
+/* @media (max-width: 1024px) {
+  .grid {
+    overflow: hidden;
+    width: 75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .main-tabs > .react-tabs__tab-panel--selected {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    overflow: hidden;
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .main-tabs > .react-tabs__tab-panel--selected {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .main-tabs > .react-tabs__tab-panel--selected {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+} */

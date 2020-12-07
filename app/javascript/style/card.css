@@ -4,8 +4,9 @@
   flex-direction: column;
   grid-column: span 1 / span 1;
   position: relative;
-  height: 6rem;
-  width: 10rem;
+  height: 17rem;
+  /* width 10 */
+  width: 25rem;
   border-radius: 1.2rem;
   padding: 2rem 0.75rem;
   margin: 0.5rem auto;
@@ -18,7 +19,8 @@
 .name-small {
   text-transform: capitalize;
   font-weight: 700;
-  font-size: large;
+  /* default large */
+  font-size: 3rem;
   color: white;
   margin-bottom: 0.5rem;
 }
@@ -29,7 +31,8 @@
   max-width: fit-content;
   padding: 0.25rem;
   margin-bottom: 0.5rem;
-  font-size: small;
+  /* default small */
+  font-size: 2rem;
   text-transform: capitalize;
   color: white;
   font-weight: bold;
@@ -41,14 +44,17 @@
   right: 1rem;
   font-weight: bold;
   filter: opacity(0.25);
+  /* default 0 */
+  font-size: 2rem;
 }
 
 .image {
   position: absolute;
   bottom: 0.5rem;
   right: 1rem;
-  height: 4.5rem;
-  width: 4.5rem;
+  /* default 4.5 */
+  height: 12rem;
+  width: 12rem;
   z-index: 10;
 }
 
@@ -64,7 +70,8 @@
 
 .tiny-svg {
   position: absolute;
-  height: 6.2rem;
+  /* default 6.2 */
+  height: 14rem;
   right: 1rem;
   bottom: 0;
   opacity: 0.5;

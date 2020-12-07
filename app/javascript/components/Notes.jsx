@@ -20,6 +20,7 @@ export default function Notes(props) {
         })
         .then((response) => {
           setUser(response.data);
+          setValue("");
         });
     } catch (error) {
       console.log(error.message);

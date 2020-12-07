@@ -1,11 +1,11 @@
 .container {
-  width: 80vw;
+  /* width: 80vw; */
   margin: auto;
 }
 
 .pokemon-details {
   overflow: hidden;
-  width: 70%;
+  /* width: 70%; */
   margin: auto;
   border-radius: 1.2rem;
   padding: 2rem;
@@ -27,15 +27,20 @@
   padding: 0.35rem;
   margin-right: 0.5rem;
   font-weight: bold;
+  /* default 0 */
+  font-size: 2.5rem;
 }
 
 .large-image {
-  /* position: absolute; */
+  /* default 0 */
+  height: 30rem;
   z-index: 30;
 }
 
 .pokemon-stats {
-  width: 70%;
+  /* default none */
+  height: 100vh;
+  /* width: 70%; */
   margin: auto;
   border-radius: 1.2rem;
   padding: 2rem;
@@ -52,6 +57,8 @@
   grid-column-start: 1;
   font-weight: bold;
   color: #9b9b9b;
+  /* default */
+  font-size: 2.5rem;
 }
 
 .stat-value {
@@ -59,12 +66,16 @@
   grid-column-start: 3;
   font-weight: bold;
   color: #444444;
+  /* default 0 */
+  font-size: 2.5rem;
 }
 
 .about-value {
   grid-column: span 1 / span 8;
-  grid-column-start: 3;
+  grid-column-start: 4;
   color: #444444;
+  /* default 0 */
+  font-size: 2.5rem;
 }
 
 #male {
@@ -79,6 +90,8 @@
   grid-column: span 10 / span 1;
   margin: 1rem 0;
   color: rgb(46, 46, 46);
+  /* default 0 */
+  font-size: 4rem;
 }
 
 .bar-container {
@@ -91,14 +104,16 @@
 
 .name-big {
   font-weight: bold;
-  font-size: 3rem;
+  /* default 3rem */
+  font-size: 7rem;
   text-transform: capitalize;
 }
 
 .pokemon-header {
   display: flex;
   justify-content: space-between;
-  font-size: 2rem;
+  /* default 2rem */
+  font-size: 5rem;
   margin-bottom: 2rem;
 }
 
@@ -122,16 +137,24 @@
   padding-bottom: 1rem;
   border: none;
   border-bottom: 2px solid #7b62a3;
+  /* default 0 */
+  font-size: 2rem;
+}
+
+.react-tabs__tab {
+  font-size: 2rem;
 }
 
 .tab-panel {
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
-  grid-gap: 1rem;
+  /* defautl 1 */
+  grid-gap: 2.5rem;
 }
 
 .note-form {
-  grid-column: 3 / 9;
+  /* default 3 / 9 */
+  grid-column: 2 / 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,19 +168,25 @@
   color: white;
   font-weight: bold;
   outline: none;
+  font-size: 3rem;
+  /* default 0 */
 }
 
 .note-input {
   width: 100%;
   margin-bottom: 0.5rem;
-  height: 4rem;
+  /* default 4 */
+  height: 8rem;
   padding: 0.5rem;
+  font-size: 3rem;
 }
 
 .note {
   grid-column: 2 / 10;
   color: #444444;
   padding: 0.3rem 0;
+  /* default none */
+  font-size: 3rem;
 }
 
 .large-svg {

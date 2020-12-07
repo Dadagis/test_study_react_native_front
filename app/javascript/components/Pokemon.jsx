@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
 import isAuthenticated from "../services/authService";
 
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
 import PokemonHeader from "./PokemonHeader";
 import PokemonTypes from "./PokemonTypes";
-import ProgressBar from "./ProgressBar";
 import StatInfo from "./StatInfo";
 
 export default function Pokemon(props) {
@@ -63,7 +61,6 @@ export default function Pokemon(props) {
     setUser(isAuthenticated());
     fetchUser();
     setLoaded(true);
-    // setUser(isAuthenticated());
   }, [id]);
 
   const calculateGenderRate = () => {

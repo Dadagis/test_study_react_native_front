@@ -14,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
       if user.save
-        payload = {user_id: user.id, email: user.email, fav_pokemons: user.format_likes(user)}
+        payload = {id: user.id, email: user.email, fav_pokemons: []}
         token = encode_token(payload)
         render json: {status: "User created", data: user, jwt: token}
       else

@@ -16,19 +16,18 @@ export default function Register(props) {
     try {
       await axios
         .post("/api/v1/users/", {
-          name: name,
-          email: email,
-          password: password,
+          user: {
+            name: name,
+            email: email,
+            password: password,
+          },
         })
         .then((response) => {
-          console.log(response);
-          //   localStorage.setItem(
-          //     "whatsAppToken",
-          //     response.headers["x-auth-token"]
-          //   );
+          console.log(response.data);
+          localStorage.setItem("pokedexToken", response.data.jwt);
         });
 
-      //   props.history.push("/");
+      props.history.push("/");
     } catch (error) {
       console.log(error);
     }

@@ -115,6 +115,7 @@
   /* default 2rem */
   font-size: 5rem;
   margin-bottom: 2rem;
+  z-index: 10;
 }
 
 .pokemon-header > i {
@@ -197,6 +198,17 @@
   opacity: 0.65;
   z-index: 0;
   margin-right: 3rem;
+}
+
+.square-svg-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0.3;
+  transform: rotate(74deg);
+  margin-left: -12rem;
+  margin-top: -7rem;
 }
 
 .delete-mark {
@@ -287,6 +299,15 @@
   .delete-mark {
     font-size: 1.2rem;
   }
+
+  .square-svg-2 {
+    margin-left: -21rem;
+    margin-top: -17rem;
+  }
+
+  .large-svg {
+    height: 26rem;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -308,5 +329,10 @@
 
   .delete-mark {
     font-size: 2.5rem;
+  }
+
+  .square-svg-2 {
+    margin-left: -15rem;
+    margin-top: -10rem;
   }
 }

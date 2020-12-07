@@ -28,7 +28,6 @@ export default function Notes(props) {
   };
 
   const handleDelete = async (noteId) => {
-    console.log("je suis dans handle delete");
     const payload = {
       note: { note_id: noteId, user_id: user.id, pokemon_number: id },
     };

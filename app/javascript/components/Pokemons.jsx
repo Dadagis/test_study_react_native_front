@@ -92,7 +92,6 @@ export default function Pokemons() {
   };
 
   const fetchType = async (type) => {
-    console.log(type);
     await axios.get(`https://pokeapi.co/api/v2/type/${type}`).then((r) => {
       setSortedPokemons(r.data.pokemon);
     });

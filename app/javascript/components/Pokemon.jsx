@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import isAuthenticated from "../services/authService";
 import mySvg from "../../assets/images/pokemon.svg";
+import squareSvg from "../../assets/images/square-of-rounded-corners.svg";
 
 import "../style/details.css";
 import AboutInfo from "./AboutInfo";
@@ -134,6 +135,7 @@ export default function Pokemon(props) {
           props.location.search.slice(7).split(",")[0]
         }`}
       >
+        <img className="square-svg-2" src={squareSvg} alt="square-svg" />
         <img className="large-svg" src={mySvg} alt="pokeball" />
         <PokemonHeader
           previous={handleClick}

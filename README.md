@@ -2,7 +2,54 @@
 
 ## Setup
 
-- tbc
+### Run on Heroku
+
+Simply visit the [deployed version](https://lit-citadel-93325.herokuapp.com/) running on heroku
+
+### Run on your own device
+
+You can simply clone this repository on your own device.
+This app is running on rails, and uses Ruby version :
+
+```
+2.6.5
+```
+
+Once the repo is properly cloned, open it through your favorite text editor, then create an environnement variable file
+
+```
+touch .env
+```
+
+Then you will need to add your own secret key. This will be used by the Bcrypt gem for password encryption
+
+```
+SECRET_KEY_BASE=[$YOUR_SECRET_KEY_HERE]
+```
+
+Lasts steps before launching the app, run
+
+```
+bundle install
+yarn install
+```
+
+Then create and migrate the database
+
+```
+rails db:create
+rails db:migrate
+```
+
+And now you can run a rails server
+
+```
+rails s
+```
+
+Open your browser and go to http://localhost:3000/ to visit the app running on your local device
+
+To go through responsive designs, please use the responsive device option on chrome developper tools since the breakpoints are specified for both Ipads and Ihpones X
 
 ## Guidelines
 

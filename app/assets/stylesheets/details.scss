@@ -155,6 +155,11 @@
   cursor: pointer;
 }
 
+.react-tabs__tab:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
 .tab-panel {
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));

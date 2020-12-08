@@ -37,7 +37,7 @@ export default function Login(props) {
   return (
     <div className="login-container">
       <div className="form">
-        <h1>Connexion</h1>
+        <h1>Log in</h1>
         <form>
           <div className="form-inputs">
             <label htmlFor="email">E-mail</label>
@@ -48,7 +48,7 @@ export default function Login(props) {
               value={email}
               onChange={handleChange}
             />
-            <label htmlFor="password">Mot de passe</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="*********"
@@ -57,13 +57,13 @@ export default function Login(props) {
               onChange={handleChange}
             />
             <button onClick={handleClick} type="submit">
-              Se connecter
+              Log in
             </button>
           </div>
         </form>
         <div className="link-div">
           <Link to="/signup" className="login-link">
-            Je n'ai pas de compte
+            I don't have an account
           </Link>
         </div>
       </div>

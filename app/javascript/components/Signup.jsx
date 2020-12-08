@@ -48,7 +48,7 @@ export default function Register(props) {
   return (
     <div className="login-container">
       <div className="form">
-        <h1>Inscription</h1>
+        <h1>Register</h1>
         <form>
           <div className="form-inputs">
             <label htmlFor="email">Name</label>
@@ -67,7 +67,7 @@ export default function Register(props) {
               value={email}
               onChange={handleChange}
             />
-            <label htmlFor="password">Mot de passe</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="*********"
@@ -76,13 +76,13 @@ export default function Register(props) {
               onChange={handleChange}
             />
             <button onClick={handleClick} type="submit">
-              S'inscrire
+              Register
             </button>
           </div>
         </form>
         <div className="link-div">
           <Link to="/login" className="login-link">
-            J'ai déja un compte
+            I already have an account
           </Link>
         </div>
       </div>

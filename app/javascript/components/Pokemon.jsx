@@ -32,6 +32,7 @@ export default function Pokemon(props) {
   const [genera, setGenera] = useState("");
   const [types, setTypes] = useState();
 
+  // Fetch needed data on a single pokemon
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`)
@@ -50,6 +51,7 @@ export default function Pokemon(props) {
       }, []);
   });
 
+  // Fetch gender and capture rate data
   useEffect(() => {
     axios.get("https://pokeapi.co/api/v2/pokemon-species/1/").then((r) => {
       setCaptureRate(r.data.capture_rate);
@@ -58,10 +60,12 @@ export default function Pokemon(props) {
     });
   }, []);
 
+  // Retrieve types info from params and store them
   useEffect(() => {
     setTypes(props.location.search.slice(7).split(","));
   }, []);
 
+  // Check if user is authenticated
   useEffect(() => {
     if (isAuthenticated()) {
       setUser(isAuthenticated());
@@ -72,6 +76,7 @@ export default function Pokemon(props) {
     setLoaded(true);
   }, [id]);
 
+  // Calulate the gender rate of a pokemon and return the corresponding HTML
   const calculateGenderRate = () => {
     if (genderRate != -1) {
       const female = (genderRate / 8) * 100;
@@ -88,10 +93,12 @@ export default function Pokemon(props) {
     }
   };
 
+  // Handle click on previous arrow
   const handleClick = () => {
     props.history.push("/");
   };
 
+  // Fetch user data to update notes and liked pokemons
   const fetchUser = async () => {
     try {
       axios.get(`/api/v1/users/${user.id}?pokemon_id=${id}`).then((r) => {
@@ -102,6 +109,7 @@ export default function Pokemon(props) {
     }
   };
 
+  // Handle a click on the favorite heart feature
   const handleFavorite = async () => {
     if (!user.fav_pokemons.includes(id)) {
       try {

@@ -6,10 +6,12 @@ import squareSvg from "../../assets/images/square-of-rounded-corners.svg";
 export default function MainHeader(props) {
   const { user } = props;
 
+  // Remove the JWT from local storage
   const handleClick = () => {
     localStorage.removeItem("pokedexToken");
   };
 
+  // Log out if logged in, and redirect to login page if logged out
   const loginOrOut = () => {
     if (user) {
       return (

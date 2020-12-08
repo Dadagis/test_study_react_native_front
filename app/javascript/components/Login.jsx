@@ -9,6 +9,7 @@ export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // API call to get a JWT if user email and password are correct
   const handleClick = async (e) => {
     e.preventDefault();
 
@@ -24,6 +25,7 @@ export default function Login(props) {
     }
   };
 
+  // handle keyboard inputs and update the state
   const handleChange = ({ currentTarget: input }) => {
     if (input.id === "email") {
       setEmail(input.value);

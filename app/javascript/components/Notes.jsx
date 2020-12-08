@@ -6,6 +6,7 @@ export default function Notes(props) {
   const [user, setUser] = useState(userInfos);
   const [value, setValue] = useState("");
 
+  // Handle a click on create a new note feature
   const handleClick = async (e) => {
     e.preventDefault();
 
@@ -27,6 +28,7 @@ export default function Notes(props) {
     }
   };
 
+  // handle a click on the delete a note feature
   const handleDelete = async (noteId) => {
     const payload = {
       note: { note_id: noteId, user_id: user.id, pokemon_number: id },
@@ -40,6 +42,7 @@ export default function Notes(props) {
     }
   };
 
+  // handle keyboard inputs and update the state
   const handleChange = ({ currentTarget: input }) => {
     setValue(input.value);
   };

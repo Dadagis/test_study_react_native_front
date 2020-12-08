@@ -10,6 +10,7 @@ export default function Card(props) {
   const [image, setImage] = useState("");
   const [pokeId, setPokeId] = useState("");
 
+  // fetch pokemons cards infos
   useEffect(() => {
     let value = [];
     axios.get(url).then((r) => {
@@ -24,6 +25,7 @@ export default function Card(props) {
     });
   }, []);
 
+  // transform a single integer into "0001" pattern
   const stringifyPokeId = () => {
     const number = pokeId.toString().padStart(4, "0");
     return number;

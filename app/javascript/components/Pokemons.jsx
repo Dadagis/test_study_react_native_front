@@ -37,6 +37,7 @@ export default function Pokemons() {
     "Fairy",
   ];
 
+  // Fetch pokemons url (20 pokemons in once)
   useEffect(() => {
     try {
       axios.get("https://pokeapi.co/api/v2/pokemon").then((response) => {
@@ -50,15 +51,18 @@ export default function Pokemons() {
     }
   }, []);
 
+  // Check if authenticated
   useEffect(() => {
     setUser(isAuthenticated());
     fetchFavorites();
   }, [loaded]);
 
+  // display all the pokemons card component
   const displayPokemons = pokemons.map((pokemon) => {
     return <Card key={pokemon.name} name={pokemon.name} url={pokemon.url} />;
   });
 
+  // display all the pokemon card component with only the selected type
   const displaySortedPokemons = sortedPokemons.map((pokemon) => {
     return (
       <Card
@@ -69,6 +73,7 @@ export default function Pokemons() {
     );
   });
 
+  // handle a click on the next or previous page button
   const handleClick = async (e) => {
     e.preventDefault();
     setPokemons([]);
@@ -91,6 +96,7 @@ export default function Pokemons() {
     }
   };
 
+  // Fetch only certain types of pokemons depending on which one is selected
   const fetchType = async (type) => {
     await axios.get(`https://pokeapi.co/api/v2/type/${type}`).then((r) => {
       setSortedPokemons(r.data.pokemon);

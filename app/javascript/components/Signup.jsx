@@ -10,6 +10,7 @@ export default function Register(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Api call to create a user
   const handleClick = async (e) => {
     e.preventDefault();
 
@@ -32,6 +33,8 @@ export default function Register(props) {
       console.log(error);
     }
   };
+
+  // Update the state when keyboard inputs
   const handleChange = ({ currentTarget: input }) => {
     if (input.id === "name") {
       setName(input.value);

@@ -53,11 +53,17 @@ export default function Pokemon(props) {
 
   // Fetch gender and capture rate data
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon-species/1/").then((r) => {
-      setCaptureRate(r.data.capture_rate);
-      setGenderRate(r.data.gender_rate);
-      setGenera(r.data.genera[7].genus);
-    });
+    axios
+      .get(
+        `https://pokeapi.co/api/v2/pokemon-species/${props.match.params.id}/`
+      )
+      .then((r) => {
+        console.log(r.data);
+        console.log(r.data.gender_rate);
+        setCaptureRate(r.data.capture_rate);
+        setGenderRate(r.data.gender_rate);
+        setGenera(r.data.genera[7].genus);
+      });
   }, []);
 
   // Retrieve types info from params and store them
@@ -81,6 +87,8 @@ export default function Pokemon(props) {
     if (genderRate != -1) {
       const female = (genderRate / 8) * 100;
       const male = 100 - female;
+      console.log(genderRate);
+      console.log(male);
       return (
         <span className="about-value">
           <i id="male" className="fas fa-mars"></i>
